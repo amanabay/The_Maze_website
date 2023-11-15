@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>The Maze</title>
+
+    <!-- Highlight JS -->
+    <link rel="stylesheet" href="css/vs2015.css">
+    <script src="js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <p><img src="img/Banner.jpeg" alt="Banner" title="" width="533px" height="400px" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  "></p>
+
+    <h1>The Maze</h1>
+
+    <p><em>John Carmack</em></p>
+
+    <pre><code>
+    // Focused, hard work is the real key to success.
+    // Keep your eyes on the goal, and just
+    // keep taking the next step towards completing it. 
+    // If you aren't sure which way to do something, 
+    // do it both ways and see which works better.
+
+</code></pre>
+
+    <p>The Maze is a small raycaster FPS wrote as an exercise in C and graphics(SDL2). </p>
+
+    <p>Features:</p>
+
+    <ul>
+        <li> Contains map parser</li>
+        <li> Textured Rendering </li>
+        <li> Has option to show untextured version </li>
+        <li> No sound whatsoever</li>
+    </ul>
+
+    <p>Features to be implemented:</p>
+
+    <ul>
+        <li> Enemies </li>
+        <li> Rain </li>
+        <li> Gun (fought hard to include this one) </li>
+        <li> Sound </li>
+    </ul>
+
+    <h3> Gameplay </h3>
+    <p><img src="img/gameplay.gif" alt="Gameplay" title="" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  ">
+    </p>
+
+    <h3> Screenshots </h3>
+    <p><img src="img/screenshot1.png" width="320px" height="257px"  alt="">
+    <img src="img/screenshot2.png" width="320px" height="257px"  alt="">
+    <img src="img/screenshot3.png" width="320px" height="257px"  alt="">
+    <img src="img/screenshot4.png" width="320px" height="257px"  alt=""> </p>
+
+
+    <p> The most important aspect of the game is raycasting. </p>
+    <h2>Raycasting</h2>
+
+    <p>Basically raycasting is a  a rasterization technique which takes some shortcuts to make things faster in comparison to true
+        3D renderers. </p>
+
+    <p>Let's assume we have an environment with a bunch of walls, and we want to render it in first-person view. For
+        each column of the screen, we do something like this:</p>
+
+    <ol>
+        <li>Cast a ray at an angle based on the column's position on the screen, player's rotation and horizontal field
+            of view</li>
+        <li>Find the intersection point of the ray and the wall</li>
+        <li>Project the intersection point to the camera plane</li>
+        <li>Calculate wall height in screen-space based on distance of intersection point to the camera plane</li>
+        <li>Render the vertical wall stripe by sampling the wall texture</li>
+    </ol>
+
+    <h2>Source </h2>
+
+    <p>If you want to see how its done, you can get the source code <a href="https://github.com/amanabay/The_Maze">here</a>.</p>
+    <p> Thank You</p>
+</body>
+</html>
